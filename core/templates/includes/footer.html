@@ -1,0 +1,117 @@
+{% load static %}
+
+
+
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="social-media">
+                <h1 class="social-media-title">Follow Us</h1>
+                <div class="social-icons">
+                    <ul>
+                        <li>
+                            <a href="https://www.linkedin.com/company/femtechaz" target="_blank">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/FemTech-106881594484026/" target="_blank">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/femtechaz/" target="_blank">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/femtechaz" target="_blank">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://youtube.com/channel/UCnpD6r0GNriHfDrTYlj7fug" target="_blank">
+                                <i class="fa fa-youtube"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.reddit.com/user/femtechaz" target="_blank">
+                                <i class="fa fa-reddit"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-widgets">
+        <div class="container">
+            <div class="row">
+                <div class="col-5">
+                    <div class="widget widget_text">
+                        <h1 class="widget-title">About Us</h1>
+                        <p>FemTech assists women to create high tech careers for setting a foundation in their own
+                            startups, explores many issues related to women working in the entrepreneurial sphere
+                            including leadership, teamwork, personal development.</p>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <div class="widget widget_text">
+                        <div class="footer-logo"><img class="has-retina" src="{% static 'images/logo/logo.png' %}"
+                                width="300px" alt="footer-logo"></div>
+                        <p class="contact-info">
+                            79 Z.Nudiraliyev str, Baku, Azerbaijan<br>
+                            Tel: +994 99 899 92 26<br>
+                            Email: <a href="mailto:project@femtech.az">project@femtech.az</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <div class="container">
+            <div class="copyright-content" style="text-align:center">
+                <p>Copyright © 2023 FemTech by <strong>FemTech Web Studio</strong></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a> -->
+<a href="#" id="contact-badge"><i class="fa-regular fa-comment-dots"></i></a>
+<div id="contact-badge-menu" style="visibility: hidden; opacity: 0;">
+    <a href="tel:994998999226" target="_blank" style="top: 85px; left: 25px;"><i class="fa-solid fa-phone"></i></a>
+    <a href="mailto:project@femtech.az" target="_blank" style="top: 35px; left: -7px;"><i
+            class="fa-solid fa-envelope"></i></a>
+    <a href="https://wa.me/994998999226" target="_blank" style="top: 25px; left: 0px;"><i class="fa-brands fa-whatsapp"
+            style="font-size: 2.4rem;"></i></a>
+</div>
+
+<script src="{% static 'owlcarousel/js/jquery.min.js' %}"></script>
+<script src="{% static 'owlcarousel/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+<script>
+    $('#companies_we_work .companies_we_work_carousel .owl-carousel').owlCarousel({
+        loop: !0,
+        margin: 10,
+        nav: !1,
+        dots: !1,
+        autoplay: !0,
+        autoplayTimeout: 2e3,
+        autoplayHoverPause: !0,
+        responsive: {
+            0: {
+                items: 2
+            },
+            600: {
+                items: 4
+            },
+            1000: {
+                items: 7
+            }
+        }
+    });
+</script>

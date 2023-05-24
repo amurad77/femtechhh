@@ -1,0 +1,152 @@
+
+
+
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}What We Do | FemTech {% endblock %}
+
+{% block content %}
+
+    <section id="page-title-area" class="section section-page-title-area">
+        <div class="container">
+            <div class="page-title-holder">
+                <h2 class="page-title">What We Do</h2>
+            </div>
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li class="active">About Us</li>
+                <li class="active">What We Do</li>
+            </ol>
+        </div>
+    </section>
+
+    <main>
+        <section class="advices">
+            <div class="container">
+                <div class="advices-content">
+                    <div>
+                        <img class="vision" src="{% static 'images/advices/Vision.png' %}" alt="Vision" width="80px" height="60px">
+                        <div>
+                            <h2>Our Vision</h2>
+                            <p>Re-shaping society in entrepreneurial fields by resolving gender equality and fostering female entrepreneurial minds.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="{% static 'images/advices/Mission.png' %}" alt="Mission" width="80px" height="85px">
+                        <div>
+                            <h2>Our Mission</h2>
+                            <p>To dedicate the highest quality of creating a female tech ecosystem delivered with creativity, ingenuity and imagination.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="speeches">
+            <div class="container">
+                <div>
+                    <h2>SPECIALTIES WE FOCUS ON</h2>
+                    <p>The Sustainable Development Goals are the blueprint to achieve a better and more sustainable future or all accepted by UN till 2030</p>
+                </div>
+
+                <ul>
+                    <li>
+                        <span>
+                            <img src="{% static 'images/speeches/SDG4.png' %}" alt="" width="150px" height="150px">
+
+                        </span>
+                        <div>   
+                            <h3>SDG 4 - EDUCATION</h3>
+                            <p>Indicates equitable quality education between women in entrepreneurial sphere and promotes learning opportunities both in technology, leadership and career equally</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span>
+                            <img src="{% static 'images/speeches/SDG5.png' %}" alt="" width="150px" height="150px">
+
+                        </span>
+                        <div>   
+                            <h3>SDG 5 - GENDER EQUALITY</h3>
+                            <p>- women in leadership; <br>
+                                - diversity and equal opportunity in entrepreneurial sphere; <br>
+                                - expand business relationships with women-owned enterprises, including small businesses and entrepreneurs.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span>
+                            <img src="{% static 'images/speeches/SDG8.png' %}" alt="" width="150px" height="150px">
+
+                        </span>
+                        <div>   
+                            <h3>SDG 8 - ECONOMIC GROWTH</h3>
+                            <p>- economic inclusion in technology; <br>
+                                - foster entrepreneurial culture and invest in or mentor en-trepreneurs.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span>
+                            <img src="{% static 'images/speeches/SDG9.png' %}" alt="" width="150px" height="150px">
+
+                        </span>
+                        <div class="sdg-9">   
+                            <h3>SDG 9 - BUILD RESILIENT INFRASTRUCTURE, PROMOTE INCLUSIVE AND SUSTAINABLE INDUSTRIALIZATION AND FOSTER INNOVATION</h3>
+                            <p>- infrastructure investments; <br>
+                                - research and development; <br>
+                                - technological investments; <br>
+                                - establish standards and promote regulation that ensure company projects and initiatives are sustainably managed.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span>
+                            <img src="{% static 'images/speeches/download.png' %}" alt="" width="150px" height="150px">
+
+                        </span>
+                        <div>   
+                            <h3>SDG 10 - REDUCED INEQUALITIES</h3>
+                            <p>- diversity and equal opportunity; <br>
+                                - capacity building; <br>
+                                - economic inclusion partner with civil society networks to provide education and entrepreneurial skills training.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="services">
+            <div class="container">
+                <div class="services-title">
+                    <h2>OUR VALUES</h2>
+                    <p>Ambitions of Platform</p>
+                </div>
+                <ul>
+                    <li>
+                        <div>
+                            <img src="{% static 'images/services/focus.png' %}" alt="focus" height="50px">
+                        </div>
+                        
+                        <p>Focus on the growth of female entrepreneurial spirit</p>
+                    </li>
+                    <li>
+                        <div>
+                        <img src="{% static 'images/services/empower.png' %}" alt="empower" height="50px">
+                            
+                        </div>
+                        <p>Empower women as a leader</p>
+                    </li>
+                    <li>
+                        <div>
+                        <img src="{% static 'images/services/realize.png' %}" alt="realize"  height="50px" >
+                            
+                        </div>
+                        <p>Realize female founders as the builders of the future</p>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+        <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    </main>
+
+
+    {% endblock %}

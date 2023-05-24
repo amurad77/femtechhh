@@ -1,0 +1,88 @@
+{% load static %}
+
+
+<img src="{% static 'images/icons/logo-left.png' %}" alt="" class="body-left-icon">
+<img src="{% static 'images/icons/logo-right.png' %}" alt="" class="body-right-icon">
+<!-- <a href="login.html" id="login-btn">Login</a>
+<a href="profile.html" id="profile-btn"><i class="fa-solid fa-user"></i></a>
+<a href="#" id="mobile-cart-btn">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span class="cart-badge">1</span>
+</a> -->
+<a id="mobile-menu-trigger" href="#0">
+    <span class="mobile-menu-icon"></span>
+</a>
+<div class="overlay"></div>
+<nav id="mobile-nav" class="mobile-nav">
+    <ul class="mobile-menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="#" id="about-us-dropdown-mobile-btn">About Us</a>
+            <ul class="dropdown" id="about-us-dropdown-mobile">
+                <li><a href="/aboutus/">Our team</a></li>
+                <li><a href="/whatwedo/">What we do</a></li>
+            </ul>
+        </li>
+        <li><a href="/programs/">Projects</a></li>
+        <li><a href="/events/">Events</a></li>
+        <!-- <li><a href="services.html">Services</a></li>
+        <li><a href="products.html">Products</a></li> -->
+        <li><a href="/news/">News</a></li>
+        <li><a href="/contact_us/">Contact Us</a></li>
+    </ul>
+</nav>
+
+<header id="header" class="style-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <div class="logo">
+                    <a href="/">
+                        <img class="has-retina" src="{% static 'images/logo/logo-white.png' %}" alt="logo-white">
+                    </a>
+                </div>
+            </div>
+            <div class="col-9">
+                <nav id="primary-menu" class="primary-menu">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="#" id="about-us-dropdown-btn">About Us</a>
+                            <ul class="dropdown" id="about-us-dropdown">
+                                <li><a href="/aboutus/">Our team</a></li>
+                                <li><a href="/whatwedo/">What we do</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/programs/">Projects</a></li>  
+                        <li><a href="/events/">Events</a></li>
+                        <!-- <li><a href="services.html">Services</a></li>
+                        <li><a href="products.html">Products</a></li> -->
+                        <li><a href="/news/">News</a></li>
+                        <li><a href="/contact_us/">Contact Us</a></li>
+                        <!-- <li><a href="login.html" class="btn-login-pink">Login</a></li>
+                        <li><a href="profile.html"><i class="fa-solid fa-user"></i></a></li>
+                        <li><a href="#" id="cart-btn">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="cart-badge">1</span>
+                        </a></li> -->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!-- <div class="cart-box">
+            <div class="product-list">
+                <div class="product-box">
+                    <div class="product-image">
+                        <img src="assets/images/products/book.png" alt="Book">
+                    </div>
+                    <div class="product-description">
+                        <p class="name">Startap Lüğəti</p>
+                        <p class="cost"><span>1</span> x <span class="product-cost">10 AZN</span></p>
+                        <a href="#" class="delete-product"><i class="fa-solid fa-trash-can"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="total-cost">Subtotal: <span id="total-cost">10 AZN</span></p>
+            <a href="cart.html" class="btn-pink-radius">Checkout</a>
+        </div> -->
+    </div>
+</header>

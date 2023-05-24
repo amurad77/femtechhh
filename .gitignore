@@ -1,0 +1,14 @@
+.pgdb
+..venv
+/.venv
+/pgdb
+./.venv
+./pgdb
+.venv
+pgdb
+.env
+./.env
+
+
+*.pyc
+*/__pycache__/

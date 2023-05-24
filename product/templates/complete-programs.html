@@ -1,0 +1,63 @@
+
+
+
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Completed Projects | FemTech {% endblock %}
+
+{% block content %}
+
+
+    <section id="page-title-area" class="section section-page-title-area">
+        <div class="container">
+            <div class="page-title-holder">
+                <h2 class="page-title">Completed Projects</h2>
+            </div>
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="/programs/">Projects</a></li>
+                <li class="active">Completed Projects</li>
+            </ol>
+        </div>
+    </section>
+
+    <main id="events-page" class="main-content">
+       <div class="container">
+            <div class="row">
+                {% for i in complete %}
+                <div class="col-4">
+                    <div class="single-event">
+                        <a href="{{ i.get_absolute_url }}">
+                            <div class="single-event-image" style="background-image: url('{{ i.image.url }}');"></div>
+                            <div class="single-event-title">
+                                <h3>{{ i.title }}</h3>
+                                <div class="line"></div>
+                                <span class="date">Deadline: {{ i.time }}</span>
+                            </div>
+                        </a>
+                        <!-- <a href="#" class="add-to-saved"><i class="fa-solid fa-bookmark"></i></a> -->
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <nav class="page-pagination">
+                <ul class="pagination">
+                    {% if page_obj.has_previous %}
+                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}"><i class="fa-solid fa-angle-left"></i></a></li>
+                    {% endif %}
+                    <li class="page-item"><span class="page-link">{{ page_obj.number }}</span></li>
+                    <li class="page-item"><span class="page-link">/</span></li>
+                    <li class="page-item"><span class="page-link">{{ page_obj.paginator.num_pages }}</span></li>
+                    {% if page_obj.has_next %}
+                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}"><i class="fa-solid fa-angle-right"></i></a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+       </div>
+    </main>
+
+   
+    {% endblock %}

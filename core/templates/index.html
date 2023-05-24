@@ -1,0 +1,325 @@
+
+
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Home | FemTech {% endblock %}
+
+{% block content %}
+
+    <main>
+        <section id="banner" class="section section-banner">
+            <div class="banner">
+                <div class="bg-image" style="background-image: url('{% static 'images/home1-slider1.jpg' %} ');"></div>
+                <div class="caption">
+                    <h2 class="big-title">Discover your potential</h2>
+                    <p class="quote">You are the <strong class="bold">champion</strong> of your life and we’re here reminding it to you and mentoring your <strong class="bold">lifestyle</strong></p>
+                    <a href="#get-involved" class="btn-radius">Join us now</a>
+                </div>
+            </div>
+        </section>
+
+        {% for i in statitics %}
+        <section class="statistics">
+            <div class="container">
+                <div class="row">
+                    <div class="single-statistics">
+                        <img src="{% static 'images/icons/events.svg' %}" alt="">
+                        <p><span id="value1">0</span><span id="value01" style="display: none;">{{i.events}}</span> events</p>
+                    </div>
+                    <div class="single-statistics">
+                        <img src="{% static 'images/icons/members.svg' %}" alt="">
+                        <p><span id="value2">0</span><span id="value02" style="display: none;">{{i.members}}</span> members</p>
+                    </div>
+                    <div class="single-statistics">
+                        <img src="{% static 'images/icons/collaborations.svg' %}" alt="">
+                        <p><span id="value3">0</span><span id="value03" style="display: none;">{{i.collaborations}}</span> collaborations</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="single-statistics">
+                        <img src="{% static 'images/icons/participants.svg' %}" alt="">
+                        <p><span id="value4">0</span><span id="value04" style="display: none;">{{i.participants}}</span> participants</p>
+                    </div>
+                    <div class="single-statistics">
+                        <img src="{% static 'images/icons/initiatives.svg' %}" alt="">
+                        <p><span id="value5">0</span><span id="value05" style="display: none;">{{i.initiatives}}</span> initiatives</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endfor %}
+    
+        <section id="products" class="section section-products">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-title">
+                            <h2>What We Offer</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row boxes">
+                    <div class="col-4 pointer">
+                        <div class="product-box">
+                            <div class="box-icon">
+                                <img src="{% static 'images/icons/FemEdu.png' %}" alt="FemEdu">
+                            </div>
+                            <div class="box-title">
+                                <h2>FemEdu</h2>
+                            </div>
+                            <div class="box-desc">
+                                <p>Transferring education including regional education, workshops by Youtube and other social platforms.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 pointer">
+                        <div class="product-box">
+                            <div class="box-icon">
+                                <img src="{% static 'images/icons/FemHack.png' %}" alt="FemHack">
+                            </div>
+                            <div class="box-title">
+                                <h2>FemHack</h2>
+                            </div>
+                            <div class="box-desc">
+                                <p>Assisting women to be involved in technology and contribute to increase the numbers of female founders by collaborating together.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 pointer">
+                        <div class="product-box">
+                            <div class="box-icon">
+                                <img src="{% static 'images/icons/FemInspo.png' %}" alt="FemInspo">
+                            </div>
+                            <div class="box-title">
+                                <h2>FemInspo</h2>
+                            </div>
+                            <div class="box-desc">
+                                <p>Inspirational blog writings/videos women sharing their own perspectives, their success stories in the sphere of entrepreneurship, business.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 pointer">
+                        <div class="product-box">
+                            <div class="box-icon">
+                                <img src="{% static 'images/icons/FemTalk.png' %}" alt="FemTalk">
+                            </div>
+                            <div class="box-title">
+                                <h2>FemTalk</h2>
+                            </div>
+                            <div class="box-desc">
+                                <p>Creating talks, panel discussions in common issues the role of women in technology.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 pointer">
+                        <div class="product-box">
+                            <div class="box-icon">
+                                <img src="{% static 'images/icons/FemWorld.png' %}" alt="FemWorld">
+                            </div>
+                            <div class="box-title">
+                                <h2>FemWorld</h2>
+                            </div>
+                            <div class="box-desc">
+                                <p>Aims hosting international guests worldwide such as businesswomen, women in tech etc.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section id="events" class="section section-events">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12" style="display: flex; align-items: center; margin-bottom: 30px;">
+                        <div class="section-title">
+                            <h2>Upcoming Events</h2>
+                            <p>Keep up with our events</p>
+                        </div>
+                        <div style="width: 50%; text-align: right; margin-right: 50px;">
+                            <a href="/upcoming-events/" class="see-all">See all</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    {% for i in upcoming1 %}
+                    <div class="col-5">
+                        <div class="single-event" style="margin-bottom: 30px;">
+                            <a href="{{ i.get_absolute_url }}">
+                                <div class="single-event-image">
+                                    <img src="{{ i.image.url }}" alt="{{ i.title }}">
+                                </div>
+                                <div class="single-event-title">
+                                    <h3>{{ i.title }}</h3>
+                                </div>
+                            </a>
+                            <!-- <a href="#" class="add-to-saved"><i class="fa-solid fa-bookmark"></i></a> -->
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    
+                    <div class="col-7">
+                        <div class="next-events">
+                        {% for i in upcoming3 %}
+                            <div class="line"></div>
+                            <a href="{{ i.get_absolute_url }}">
+                                <div class="next-single-event">
+                                    <div>
+                                        <div class="single-event-image" style="background-image: url('{{ i.image.url }}');"></div>
+                                    </div>
+                                    <div class="single-event-info">
+                                        <h3>{{ i.title }}</h3>
+                                        <p>{{ i.description|truncatechars:130|safe }}</p>
+                                        <span>{{ i.time }}</span>
+                                    </div>
+                                </div>
+                            </a>
+                        {% endfor %}
+                            <div id="end-see-all" style="text-align: center; margin-top: 20px;">
+                                <a href="/upcoming-events/" class="see-all">See all</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section id="get-involved" class="section section-consultant-form">
+            <div class="parallax-part">
+                <div class="bg-image" style="background-image: url({% static 'images/free-consultant-bg.jpg' %});"></div>
+                <div class="consultant-text">
+                    <h2>Get Involved</h2>
+                    <p>Join us for being with us and/or to get the latest news and updates.</p>
+                </div>
+            </div>
+    
+            <div class="container">
+                <form class="dropshadow" method="POST">
+                    <div class="form-icon">
+                        <i class="fa fa-clipboard"></i>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+
+
+                            {% csrf_token %}
+
+
+                            <div class="form-group">
+                                <i class="fa fa-user"></i>
+                                {{ form.name }}
+                                <!-- <input type="text" class="form-control" name="name" placeholder="Name *" required=""> -->
+                            </div>
+
+                            <div class="form-group">
+                                <i class="fa fa-envelope"></i>
+                                {{ form.email }}
+                                <!-- <input type="email" class="form-control" name="email" placeholder="E-mail Address *" required=""> -->
+                            </div>
+
+                            <div class="form-group">
+                                <i class="fa fa-phone-square"></i>
+                                {{ form.number }}
+                                <!-- <input type="text" class="form-control" name="phone" placeholder="Phone Number *" required=""> -->
+                            </div>
+
+                            <div class="form-group">
+                                <i class="fa fa-sign-in"></i>
+                                {{ form.membership_type }}
+                                <!-- <select class="form-control" name="category">
+                                    <option value="">Become *</option>
+                                    <option value="1">Speaker</option>
+                                    <option value="2">Partner</option>
+                                    <option value="3">Member</option>
+                                </select> -->
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="col-8">
+                            <div class="form-group">
+                                <i class="fa fa-pencil-square"></i>
+                                {{ form.message }}
+                                <!-- <textarea name="textarea" class="form-control" rows="8" placeholder="Motivation for being with us…"></textarea> -->
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-send">Join Us Now</button>
+                </form>
+            </div>
+        </section>
+    
+        <section id="companies_we_work" class="section section-companies">
+            <div class="container">
+                <div class="row">
+                    <div class="section-title">
+                        <h2>Our Partners</h2>
+                        <p>Organizations we have worked with</p>
+                    </div>
+                </div>
+                <div class="companies_we_work_carousel" style="height: 100px;">
+                    <div class="owl-carousel owl-theme owl-loaded owl-drag">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage" style="transform: translate3d(-1807px, 0px, 0px); transition: all 0.25s ease 0s; width: 2958px;">
+
+                            {% for i in partners %}
+                                <div class="owl-item" style="width: 154.286px; margin-right: 10px;">
+                                    <div class="item" style="padding:10px;">
+                                        <div class="image_holder">
+                                            <img src="{{ i.image.url }}" style="width:75%;">
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+                                <!-- <div class="owl-item" style="width: 154.286px; margin-right: 10px;">
+                                    <div class="item" style="padding:10px;">
+                                        <div class="image_holder">
+                                            <img src="https://femtech.az/uploads/617a944ce3462722372ef3cc0f1be989c526e6a5c711b.jpg" style="width:75%;">
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="owl-dots disabled"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        const obj1 = document.getElementById("value1");
+        const value1 = parseInt(document.getElementById("value01").textContent);
+        const obj2 = document.getElementById("value2");
+        const value2 = parseInt(document.getElementById("value02").textContent);
+        const obj3 = document.getElementById("value3");
+        const value3 = parseInt(document.getElementById("value03").textContent);
+        const obj4 = document.getElementById("value4");
+        const value4 = parseInt(document.getElementById("value04").textContent);
+        const obj5 = document.getElementById("value5");
+        const value5 = parseInt(document.getElementById("value05").textContent);
+        animateValue(obj1, 0, value1, 3000);
+        animateValue(obj2, 0, value2, 3000);
+        animateValue(obj3, 0, value3, 3000);
+        animateValue(obj4, 0, value4, 3000);
+        animateValue(obj5, 0, value5, 3000);
+    </script>
+
+    {% endblock %}

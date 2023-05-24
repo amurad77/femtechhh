@@ -1,0 +1,242 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 10px;
+}
+body {
+    background-image: url(../images/login-bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: max-content;
+    width: 100%;
+    z-index: 0;
+}
+
+a,
+button {
+    font-family: "Arvo", serif;
+    text-decoration: none;
+}
+
+.login-section {
+    margin: 50px 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    width: 530px;
+    height: max-content;
+    border-radius: 24px;
+    background: #fff;
+    z-index: 1000;
+    padding: 50px 35px;
+    display: flex;
+    flex-direction: column;
+}
+.login-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+.login-logo img {
+    width: 200px;
+}
+
+.auth-btn {
+    padding: 5px 20px;
+    font-size: 1.8rem;
+    color: #4A4A4A;
+    border-radius: 24px;
+    border: 1px solid #666666;
+    background: #fff;
+    cursor: pointer;
+    margin-left: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+.auth-active {
+    color: #fff;
+    background: #FF66D2;
+    border: 1px solid #FF66D2;
+}
+
+.login-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login-main h1 {
+    font-family: "Arvo", serif;
+    font-size: 2.6rem;
+    color: #440659;
+    font-weight: normal;
+}
+.login-main p {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #4A4A4A;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 50px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+.login-form > div {
+    display: flex;
+    justify-content: space-between;
+}
+.login-form input {
+    padding: 8px 15px;
+    font-size: 1.8rem;
+    color: #666666;
+    background: rgba(68, 6, 89, 0.1);
+    border: none;
+    outline: none;
+    margin-bottom: 25px;
+}
+.login-form input::placeholder {
+    font-size: 1.8rem;
+    color: #666666;
+}
+
+.checkbox {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    font-size: 1.8rem;
+    font-family: 'Open Sans', sans-serif;
+    color: #666;
+}
+input[type=checkbox] {
+    visibility: hidden;
+}
+.mark {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background: rgba(68, 6, 89, 0.1);
+}
+.checkbox input:checked ~ .mark {
+    background-color: #440659;
+}
+.mark::after {
+    content: "L";
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 1.6rem;
+    display: none;
+    transform: rotate(45deg) scale(-1, 1);
+    position: absolute;
+    bottom: 1px;
+    left: 4px;
+    color: #fff;
+}
+.checkbox input:checked ~ .mark::after {
+    display: block;
+}
+
+.login-form>div>a {
+    font-size: 1.8rem;
+    font-family: 'Open Sans', sans-serif;
+    color: #666;
+    text-align: end;
+}
+
+.login-btn {
+    font-family: "Arvo", serif;
+    width: 100%;
+    color: #fff;
+    border: none;
+    padding: 10px 0;
+    font-size: 1.8rem;
+    background: #FF66D2;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+.login-with {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.login-with div {
+    width: 167px;
+    height: 1px;
+    background: #666;
+}
+.login-with p {
+    font-size: 1.6rem;
+    color: #666;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.login-sm {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.login-sm a {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    margin: 0 5px;
+    text-align: center;
+}
+.login-sm .login-fb {
+    background-color: #4267B2;
+}
+.login-sm .login-g {
+    background-color: #DB4437;
+}
+.login-sm i {
+    color: white;
+    font-size: 24px;
+    line-height: 45px;
+}
+
+.forgot-pass {
+    margin-bottom: 10px !important;
+}
+
+@media screen and (max-width:495px) {
+    .login-logo div {
+        margin-top: 20px;
+    }
+    .login-logo {
+        flex-direction: column;
+    }
+    .login {
+        width: 90%;
+        height: max-content;
+    }
+}
+
+@media screen and (max-width:335px) {
+    .login-logo div {
+        display: flex;
+        flex-direction: column;
+    }
+    .login-logo div a {
+        margin-top: 10px;
+        width: 200px;
+    }
+    .login {
+        width: 90%;
+        height: max-content;
+    }
+}

@@ -1,0 +1,120 @@
+
+
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} About Us | FemTech {% endblock %}
+
+{% block content %}
+
+    <section id="page-title-area" class="section section-page-title-area">
+        <div class="container">
+            <div class="page-title-holder">
+                <h2 class="page-title">About us</h2>
+            </div>
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li class="active">About Us</li>
+                <li class="active">Our Team</li>
+            </ol>
+        </div>
+    </section>
+
+    <main>
+        <section id="bio" class="section section-bio">
+            <div class="container">
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-11 bio-bg">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="about-us">
+                                    <figure>
+                                        <img src="{% static 'images/about-us.jpg' %}" alt="about image">
+                                    </figure>
+                                    <div class="bio-caption">
+                                        <h2>FEMTECH</h2>
+                                        <span>About Us</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="bio-text">
+                                    <p>FemTech assists women to create high tech careers for setting a foundation in their own startups, explores many issues related to women working in the entrepreneurial sphere including leadership, teamwork, personal development.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section teams">
+            <div class="container">
+                <div class="section-title">
+                    <h2>TEAMS</h2>
+                    <p>Our Team Members</p>
+                </div>
+                <ul class="speakers">
+
+                    {% for i in team %}
+                    <li>
+                        <div class="hover-eff">
+                            <div class="speaker-img" style="background-image: url('{{ i.image.url }}');"></div>
+                            <a href="{{ i.linkedin_link }}" target="_blank">in</a>
+                            <div class="speaker-info">
+                                <h3>{{ i.name }}</h3>
+                                <p>
+                                    <strong>{{ i.positions }}</strong>
+                                    <br>
+                                    {% if i.email %}
+                                    {{ i.email }}
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+
+                </ul>
+            </div>
+        </section>
+
+        <section id="companies_we_work" class="section section-companies" style="margin-top: 50px;">
+            <div class="container">
+                <div class="row">
+                    <div class="section-title" style="margin-bottom: 30px;">
+                        <h2>OUR ALUMNIS</h2>
+                    </div>
+                </div>
+                <div class="companies_we_work_carousel alumnis_carousel" style="height: 170px; margin: 0 70px;">
+                    <div class="owl-carousel owl-theme owl-loaded owl-drag">
+                        <div class="owl-stage-outer" style="height: 170px;">
+                            <div class="owl-stage">
+                            {% for i in alumnis %}
+                                <div class="owl-item" style="margin-right: 10px;">
+                                    <div class="item" style="margin: 0 10px;">
+                                        <div class="hover-eff">
+                                            <div class="speaker-img" style="background-image: url('{{ i.image.url }}');"></div>
+                                            <div class="speaker-info">
+                                                <h3>{{ i.name }}</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            </div>
+                        </div>
+                        <div class="owl-dots disabled"></div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="/alumnis/" class="see-all">See all</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    {% endblock %}

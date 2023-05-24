@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Events | FemTech {% endblock %}
+
+{% block content %}
+
+<section id="page-title-area" class="section section-page-title-area">
+    <div class="container">
+        <div class="page-title-holder">
+            <h2 class="page-title">{{event.title}}</h2>
+        </div>
+        <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li><a href="/events/">Events</a></li>
+            <li>{{event.title}}</li>
+        </ol>
+    </div>
+</section>
+
+<main class="main-content">
+    <div class="container main-event">
+        <div class="row">
+            <div class="col-9">
+                <div class="event-info-title">
+                    <div class="gallery">
+                        <div class="photos">
+                            
+                            <div class="block active">
+                                <img src="{{event.image.url }}" alt="{{event.title}}">
+                            </div>
+                            
+                            <div class="block">
+                                {% if event.other_image1 %}
+                                <img src="{{event.other_image1.url }}" alt="{{event.title}}">
+                                {% endif %}
+                            </div>
+                            <div class="block">
+                                {% if event.other_image2 %}
+                                <img src="{{event.other_image2.url }}" alt="{{event.title}}">
+                                {% endif %}
+                            </div>
+                            <div class="block">
+                                {% if event.other_image3 %}
+                                <img src="{{event.other_image3.url }}" alt="{{event.title}}">
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% if event.other_image1 %}
+                        <div class="buttons">
+                            <a class="prev" href="#"><i class="fa-solid fa-angle-left"></i></a>
+                            <a class="next" href="#"><i class="fa-solid fa-angle-right"></i></a>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div>
+
+                        <div class="event-top">
+                            <div>
+                                <h1>{{event.title}}</h1>
+                                <!-- <a href="#" class="add-to-saved"><i class="fa-solid fa-bookmark"></i></a> -->
+                            </div>
+                            <p class="event-loc"><b>Loaction:</b> {{event.location}}</p>
+                            <p><b>Date:</b> {{event.time}}</p>
+                        </div>
+
+                        <div class="event-price">
+                            <!-- <p>10 AZN</p>
+                                <button>Buy Ticket</button> -->
+                            <!-- <a href="#" class="btn btn-pink-radius">Register</a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="event-info-content">
+                    <p>{{event.description|safe}}</p>
+                    <!-- <iframe class="youtube" width="100%" src="https://www.youtube.com/embed/aqa2X-XS1kE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    var nextBtn = document.querySelector(".gallery .buttons .next");
+    var prevBtn = document.querySelector(".gallery .buttons .prev");
+    var slide = document.querySelectorAll(".gallery .photos .block");
+    var i = 0;
+    prevBtn.onclick = function (e) {
+        slide[i].classList.remove("active");
+        i--;
+        if (i < 0) {
+            i = slide.length - 1;
+        }
+        slide[i].classList.add("active");
+        e.preventDefault();
+    };
+    nextBtn.onclick = function (e) {
+        slide[i].classList.remove("active");
+        i++;
+        if (i >= slide.length) {
+            i = 0;
+        }
+        slide[i].classList.add("active");
+        e.preventDefault();
+    };
+</script>
+
+{% endblock %}
